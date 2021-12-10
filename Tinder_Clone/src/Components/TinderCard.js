@@ -17,12 +17,12 @@ const TinderCards = () => {
     }
     getPeople(db);
   }, []);
-  const onSwipe = (dir, remove) => {
-    console.log('receiving' + remove);
-  };
-  const onCardLeftScreen = (person) => {
-    console.log(person + 'left screen');
-  };
+  // const onSwipe = (dir, remove) => {
+  //   console.log('receiving' + remove);
+  // };
+  // const onCardLeftScreen = (person) => {
+  //   console.log(person + 'left screen');
+  // };
 
   return (
     <div className='tinderCards'>
@@ -33,8 +33,8 @@ const TinderCards = () => {
               className='swipe'
               key={index}
               preventSwipe={['up', 'down']}
-              onSwipe={(dir) => onSwipe(dir, person.name)}
-              onCardLeftScreen={() => onCardLeftScreen(person.name)}
+              // onSwipe={(dir) => onSwipe(dir, person.name)}
+              // onCardLeftScreen={() => onCardLeftScreen(person.name)}
             >
               <div
                 style={{ backgroundImage: `url(${person.url})` }}
@@ -46,7 +46,7 @@ const TinderCards = () => {
         })}
       </div>
 
-      <SwipeButtons onCardLeftScreen={onCardLeftScreen} />
+      <SwipeButtons />
     </div>
   );
 };
